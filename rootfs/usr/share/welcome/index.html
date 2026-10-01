@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Mainuan — Bem-vindo</title>
-<script src="https://unpkg.com/lucide@0.513.0/dist/umd/lucide.min.js"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -48,7 +48,7 @@
     transition: background 0.3s, color 0.3s;
   }
 
-  /* ── SIDEBAR ── */
+  /* -- SIDEBAR -- */
   #sidebar {
     width: 220px;
     min-width: 220px;
@@ -83,8 +83,8 @@
   .nav-item:hover { background: var(--bg-elevated); color: var(--text-primary); }
 
   .nav-item.active {
-    background: rgba(var(--accent-rgb), 0.12);
-    color: var(--accent);
+    background: rgba(var(--accent-rgb), 0.5);
+    color: var(--text-primary);
     border-color: rgba(var(--accent-rgb), 0.18);
   }
 
@@ -97,7 +97,7 @@
 
   .nav-item i { flex-shrink: 0; }
 
-  /* ── CONTENT ── */
+  /* -- CONTENT -- */
   #content {
     flex: 1; overflow-y: auto;
     background: var(--bg-base);
@@ -111,7 +111,7 @@
   .page-title  { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; }
   .page-desc   { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
 
-  /* ── CARDS ── */
+  /* -- CARDS -- */
   .card {
     background: var(--bg-card);
     border: 1px solid var(--border);
@@ -129,7 +129,7 @@
     align-items: stretch;
   }
 
-  /* ── BUTTONS ── */
+  /* -- BUTTONS -- */
   .btn {
     display: inline-flex; align-items: center; gap: 6px;
     padding: 7px 14px; border-radius: 8px;
@@ -158,7 +158,7 @@
   }
   .btn-danger:hover { background: rgba(231,76,60,0.22); }
 
-  /* ── SECTION ROW ── */
+  /* -- SECTION ROW -- */
   .section-row {
     display: flex; align-items: center; justify-content: space-between;
     padding: 14px 18px;
@@ -174,7 +174,7 @@
   .section-row-label { font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 10px; }
   .section-row-sub   { font-size: 11px; color: var(--text-muted); }
 
-  /* ── COLOR SWATCHES ── */
+  /* -- COLOR SWATCHES -- */
   .swatch {
     width: 28px; height: 28px; border-radius: 50%; cursor: pointer;
     border: 2px solid transparent; transition: all 0.18s;
@@ -183,7 +183,7 @@
   .swatch:hover  { transform: scale(1.15); }
   .swatch.active { border-color: var(--text-primary); box-shadow: 0 0 0 3px rgba(var(--accent-rgb),0.3); }
 
-  /* ── TOGGLE ── */
+  /* -- TOGGLE -- */
   .toggle { display: flex; align-items: center; gap: 10px; }
   .toggle-track {
     width: 40px; height: 22px; border-radius: 11px;
@@ -198,7 +198,7 @@
   }
   .toggle-track.on .toggle-thumb { transform: translateX(18px); }
 
-  /* ── UNIFIED CARD ── */
+  /* -- UNIFIED CARD -- */
   .app-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
@@ -226,7 +226,7 @@
   .app-desc { font-size: 11px; color: var(--text-muted); line-height: 1.4; flex: 1; }
   .app-card-btn { margin-top: auto; padding-top: 10px; width: 100%; }
 
-  /* ── VIDEO CARD ── */
+  /* -- VIDEO CARD -- */
   .video-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
@@ -263,7 +263,7 @@
   .video-title { font-size: 13px; font-weight: 600; }
   .video-dur   { font-size: 11px; color: var(--text-muted); margin-top: auto; padding-top: 6px; }
 
-  /* ── MODAL ── */
+  /* -- MODAL -- */
   .modal-overlay {
     display: none; position: fixed; inset: 0;
     background: rgba(0,0,0,0.7); z-index: 1000;
@@ -293,7 +293,7 @@
   }
   .modal-close:hover { color: var(--text-primary); background: var(--bg-elevated); }
 
-  /* ── ACCORDION ── */
+  /* -- ACCORDION -- */
   .accordion {
     border: 1px solid var(--border);
     border-radius: 12px;
@@ -347,9 +347,9 @@
   .person-name { font-size: 12px; font-weight: 600; }
   .person-role { font-size: 11px; color: var(--text-muted); }
 
-  /* ── CREDIT CARD (agradecimentos) ── */
+  /* -- CREDIT CARD (agradecimentos) -- */
   .qr-box {
-    width: 180px; height: 180px;
+    width: 256px; height: 256px;
     border: 2px dashed var(--border);
     border-radius: 12px;
     display: flex; align-items: center; justify-content: center;
@@ -357,7 +357,7 @@
     padding: 16px;
   }
 
-  /* ── CREDIT CARD ── */
+  /* -- CREDIT CARD -- */
   .credit-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
@@ -373,7 +373,7 @@
     font-size: 18px; flex-shrink: 0;
   }
 
-  /* ── LAYOUT CARD ── */
+  /* -- LAYOUT CARD -- */
   .layout-card {
     background: var(--bg-card);
     border: 2px solid var(--border);
@@ -424,19 +424,13 @@
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════════════════════
-     SIDEBAR
-═══════════════════════════════════════════════════════════ -->
 <nav id="sidebar">
   <div class="nav-group" id="nav-group"></div>
 </nav>
 
-<!-- ══════════════════════════════════════════════════════════
-     CONTENT — gerado dinamicamente pelo JS a partir do CFG
-═══════════════════════════════════════════════════════════ -->
 <main id="content" role="main"></main>
 
-  <!-- ── SOBRE ── -->
+  <!-- -- SOBRE -- -->
   <div class="page" id="page-sobre">
     <div class="page-header">
       <div class="page-title">Sobre o Mainuan</div>
@@ -457,20 +451,12 @@
       </div>
       <div class="accordion-body" id="acc-dev-body">
         <div class="accordion-person">
-          <div class="person-avatar"><img src="https://picsum.photos/id/1/34/34" alt=""></div>
-          <div><div class="person-name">Ana Ferreira</div><div class="person-role">Arquitetura do sistema & integração KDE</div></div>
+          <div class="accordion-icon-wrap"><i data-lucide="circle-user-round" size="18"></i></div>
+          <div><div class="person-name">Natanael Barbosa Santos</div><div class="person-role">Integração KDE, Scripts de inicialização & serviços</div></div>
         </div>
         <div class="accordion-person">
-          <div class="person-avatar"><img src="https://picsum.photos/id/2/34/34" alt=""></div>
-          <div><div class="person-name">Carlos Mendes</div><div class="person-role">Scripts de inicialização & serviços</div></div>
-        </div>
-        <div class="accordion-person">
-          <div class="person-avatar"><img src="https://picsum.photos/id/3/34/34" alt=""></div>
-          <div><div class="person-name">Priya Nair</div><div class="person-role">Módulos de atualização & segurança</div></div>
-        </div>
-        <div class="accordion-person">
-          <div class="person-avatar"><img src="https://picsum.photos/id/4/34/34" alt=""></div>
-          <div><div class="person-name">Lucas Oliveira</div><div class="person-role">Welcome App & ferramentas de boas-vindas</div></div>
+          <div class="accordion-icon-wrap"><i data-lucide="circle-user-round" size="18"></i></div>
+          <div><div class="person-name">Rafael Ruscher</div><div class="person-role">Integração KDE, Scripts de inicialização & serviços</div></div>
         </div>
       </div>
     </div>
@@ -487,16 +473,8 @@
       </div>
       <div class="accordion-body" id="acc-design-body">
         <div class="accordion-person">
-          <div class="person-avatar"><img src="https://picsum.photos/id/5/34/34" alt=""></div>
-          <div><div class="person-name">Marina Costa</div><div class="person-role">Identidade visual & temas do sistema</div></div>
-        </div>
-        <div class="accordion-person">
-          <div class="person-avatar"><img src="https://picsum.photos/id/6/34/34" alt=""></div>
-          <div><div class="person-name">Diego Rocha</div><div class="person-role">Ícones, wallpapers & assets gráficos</div></div>
-        </div>
-        <div class="accordion-person">
-          <div class="person-avatar"><img src="https://picsum.photos/id/7/34/34" alt=""></div>
-          <div><div class="person-name">Sofia Lima</div><div class="person-role">Acessibilidade & testes de usabilidade</div></div>
+          <div class="accordion-icon-wrap"><i data-lucide="circle-user-round" size="18"></i></div>
+          <div><div class="person-name">Ednei Anunciação</div><div class="person-role">Identidade visual & temas do sistema</div></div>
         </div>
       </div>
     </div>
@@ -513,15 +491,28 @@
       </div>
       <div class="accordion-body" id="acc-docs-body">
         <div class="accordion-person">
-          <div class="person-avatar"><img src="https://picsum.photos/id/11/34/34" alt=""></div>
-          <div><div class="person-name">Fernanda Castro</div><div class="person-role">Wiki, tutoriais & guias de uso</div></div>
-        </div>
-        <div class="accordion-person">
-          <div class="person-avatar"><img src="https://picsum.photos/id/12/34/34" alt=""></div>
-          <div><div class="person-name">Gustavo Melo</div><div class="person-role">Suporte ao usuário & fórum</div></div>
+          <div class="accordion-icon-wrap"><i data-lucide="circle-user-round" size="18"></i></div>
+          <div><div class="person-name">Daigo Asuka</div><div class="person-role">Wiki, tutoriais, vídeos & guias de uso</div></div>
         </div>
       </div>
     </div>
+
+    <!-- Website -->
+    <div class="accordion" id="acc-website">
+      <div class="accordion-header" onclick="toggleAccordion('acc-website')">
+        <div class="accordion-icon-wrap" style="background:rgba(230,126,34,0.12);">
+          <i data-lucide="globe" size="18" style="color:#e67e22"></i>
+        </div>
+        <span class="accordion-title">Site da distribuição</span>
+        <span class="accordion-badge" style="background:rgba(230,126,34,0.12);color:#e67e22;">Docs</span>
+        <i data-lucide="chevron-down" size="16" class="accordion-chevron"></i>
+      </div>
+      <div class="accordion-body" id="acc-website-body">
+        <div class="accordion-person">
+          <div class="accordion-icon-wrap"><i data-lucide="circle-user-round" size="18"></i></div>
+          <div><div class="person-name">Vinícios Luan</div><div class="person-role">Website</div></div>
+        </div>
+      </div>
 
     <div class="section-title" style="margin-top:24px;">Agradecimentos</div>
 
@@ -569,7 +560,7 @@
     </div>
   </div>
 
-  <!-- ── CONTRIBUIR ── -->
+  <!-- -- CONTRIBUIR -- -->
   <div class="page" id="page-contribuir">
     <div class="page-header">
       <div class="page-title">Contribuir</div>
@@ -585,11 +576,1020 @@
         </div>
         <div style="display:flex;justify-content:center;">
           <div class="qr-box">
-            <div>
-              <i data-lucide="qr-code" size="48" style="display:block;margin:0 auto 8px;opacity:.4"></i>
-              QR Code Pix<br/>
-              <span style="font-size:10px">(placeholder)</span>
-            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink" width="424" height="424" viewBox="0 0 424 424">
+<rect x="0" y="0" width="424" height="424" fill="#ffffff"/>
+<defs>
+<rect id="p" width="8" height="8"/>
+</defs>
+<g fill="#000000">
+<use xlink:href="#p" x="32" y="32"/>
+<use xlink:href="#p" x="32" y="40"/>
+<use xlink:href="#p" x="32" y="48"/>
+<use xlink:href="#p" x="32" y="56"/>
+<use xlink:href="#p" x="32" y="64"/>
+<use xlink:href="#p" x="32" y="72"/>
+<use xlink:href="#p" x="32" y="80"/>
+<use xlink:href="#p" x="32" y="96"/>
+<use xlink:href="#p" x="32" y="112"/>
+<use xlink:href="#p" x="32" y="120"/>
+<use xlink:href="#p" x="32" y="128"/>
+<use xlink:href="#p" x="32" y="136"/>
+<use xlink:href="#p" x="32" y="176"/>
+<use xlink:href="#p" x="32" y="184"/>
+<use xlink:href="#p" x="32" y="192"/>
+<use xlink:href="#p" x="32" y="232"/>
+<use xlink:href="#p" x="32" y="248"/>
+<use xlink:href="#p" x="32" y="264"/>
+<use xlink:href="#p" x="32" y="272"/>
+<use xlink:href="#p" x="32" y="320"/>
+<use xlink:href="#p" x="32" y="336"/>
+<use xlink:href="#p" x="32" y="344"/>
+<use xlink:href="#p" x="32" y="352"/>
+<use xlink:href="#p" x="32" y="360"/>
+<use xlink:href="#p" x="32" y="368"/>
+<use xlink:href="#p" x="32" y="376"/>
+<use xlink:href="#p" x="32" y="384"/>
+<use xlink:href="#p" x="40" y="32"/>
+<use xlink:href="#p" x="40" y="80"/>
+<use xlink:href="#p" x="40" y="104"/>
+<use xlink:href="#p" x="40" y="128"/>
+<use xlink:href="#p" x="40" y="144"/>
+<use xlink:href="#p" x="40" y="152"/>
+<use xlink:href="#p" x="40" y="160"/>
+<use xlink:href="#p" x="40" y="184"/>
+<use xlink:href="#p" x="40" y="216"/>
+<use xlink:href="#p" x="40" y="224"/>
+<use xlink:href="#p" x="40" y="232"/>
+<use xlink:href="#p" x="40" y="256"/>
+<use xlink:href="#p" x="40" y="280"/>
+<use xlink:href="#p" x="40" y="288"/>
+<use xlink:href="#p" x="40" y="312"/>
+<use xlink:href="#p" x="40" y="336"/>
+<use xlink:href="#p" x="40" y="384"/>
+<use xlink:href="#p" x="48" y="32"/>
+<use xlink:href="#p" x="48" y="48"/>
+<use xlink:href="#p" x="48" y="56"/>
+<use xlink:href="#p" x="48" y="64"/>
+<use xlink:href="#p" x="48" y="80"/>
+<use xlink:href="#p" x="48" y="96"/>
+<use xlink:href="#p" x="48" y="128"/>
+<use xlink:href="#p" x="48" y="136"/>
+<use xlink:href="#p" x="48" y="216"/>
+<use xlink:href="#p" x="48" y="224"/>
+<use xlink:href="#p" x="48" y="232"/>
+<use xlink:href="#p" x="48" y="240"/>
+<use xlink:href="#p" x="48" y="248"/>
+<use xlink:href="#p" x="48" y="280"/>
+<use xlink:href="#p" x="48" y="312"/>
+<use xlink:href="#p" x="48" y="336"/>
+<use xlink:href="#p" x="48" y="352"/>
+<use xlink:href="#p" x="48" y="360"/>
+<use xlink:href="#p" x="48" y="368"/>
+<use xlink:href="#p" x="48" y="384"/>
+<use xlink:href="#p" x="56" y="32"/>
+<use xlink:href="#p" x="56" y="48"/>
+<use xlink:href="#p" x="56" y="56"/>
+<use xlink:href="#p" x="56" y="64"/>
+<use xlink:href="#p" x="56" y="80"/>
+<use xlink:href="#p" x="56" y="96"/>
+<use xlink:href="#p" x="56" y="112"/>
+<use xlink:href="#p" x="56" y="128"/>
+<use xlink:href="#p" x="56" y="152"/>
+<use xlink:href="#p" x="56" y="160"/>
+<use xlink:href="#p" x="56" y="168"/>
+<use xlink:href="#p" x="56" y="184"/>
+<use xlink:href="#p" x="56" y="192"/>
+<use xlink:href="#p" x="56" y="216"/>
+<use xlink:href="#p" x="56" y="232"/>
+<use xlink:href="#p" x="56" y="240"/>
+<use xlink:href="#p" x="56" y="248"/>
+<use xlink:href="#p" x="56" y="264"/>
+<use xlink:href="#p" x="56" y="272"/>
+<use xlink:href="#p" x="56" y="280"/>
+<use xlink:href="#p" x="56" y="288"/>
+<use xlink:href="#p" x="56" y="296"/>
+<use xlink:href="#p" x="56" y="312"/>
+<use xlink:href="#p" x="56" y="320"/>
+<use xlink:href="#p" x="56" y="336"/>
+<use xlink:href="#p" x="56" y="352"/>
+<use xlink:href="#p" x="56" y="360"/>
+<use xlink:href="#p" x="56" y="368"/>
+<use xlink:href="#p" x="56" y="384"/>
+<use xlink:href="#p" x="64" y="32"/>
+<use xlink:href="#p" x="64" y="48"/>
+<use xlink:href="#p" x="64" y="56"/>
+<use xlink:href="#p" x="64" y="64"/>
+<use xlink:href="#p" x="64" y="80"/>
+<use xlink:href="#p" x="64" y="96"/>
+<use xlink:href="#p" x="64" y="112"/>
+<use xlink:href="#p" x="64" y="128"/>
+<use xlink:href="#p" x="64" y="136"/>
+<use xlink:href="#p" x="64" y="176"/>
+<use xlink:href="#p" x="64" y="184"/>
+<use xlink:href="#p" x="64" y="192"/>
+<use xlink:href="#p" x="64" y="200"/>
+<use xlink:href="#p" x="64" y="208"/>
+<use xlink:href="#p" x="64" y="216"/>
+<use xlink:href="#p" x="64" y="224"/>
+<use xlink:href="#p" x="64" y="232"/>
+<use xlink:href="#p" x="64" y="248"/>
+<use xlink:href="#p" x="64" y="256"/>
+<use xlink:href="#p" x="64" y="264"/>
+<use xlink:href="#p" x="64" y="280"/>
+<use xlink:href="#p" x="64" y="296"/>
+<use xlink:href="#p" x="64" y="304"/>
+<use xlink:href="#p" x="64" y="312"/>
+<use xlink:href="#p" x="64" y="320"/>
+<use xlink:href="#p" x="64" y="336"/>
+<use xlink:href="#p" x="64" y="352"/>
+<use xlink:href="#p" x="64" y="360"/>
+<use xlink:href="#p" x="64" y="368"/>
+<use xlink:href="#p" x="64" y="384"/>
+<use xlink:href="#p" x="72" y="32"/>
+<use xlink:href="#p" x="72" y="80"/>
+<use xlink:href="#p" x="72" y="96"/>
+<use xlink:href="#p" x="72" y="112"/>
+<use xlink:href="#p" x="72" y="128"/>
+<use xlink:href="#p" x="72" y="136"/>
+<use xlink:href="#p" x="72" y="152"/>
+<use xlink:href="#p" x="72" y="176"/>
+<use xlink:href="#p" x="72" y="184"/>
+<use xlink:href="#p" x="72" y="192"/>
+<use xlink:href="#p" x="72" y="224"/>
+<use xlink:href="#p" x="72" y="232"/>
+<use xlink:href="#p" x="72" y="240"/>
+<use xlink:href="#p" x="72" y="248"/>
+<use xlink:href="#p" x="72" y="256"/>
+<use xlink:href="#p" x="72" y="264"/>
+<use xlink:href="#p" x="72" y="280"/>
+<use xlink:href="#p" x="72" y="288"/>
+<use xlink:href="#p" x="72" y="336"/>
+<use xlink:href="#p" x="72" y="384"/>
+<use xlink:href="#p" x="80" y="32"/>
+<use xlink:href="#p" x="80" y="40"/>
+<use xlink:href="#p" x="80" y="48"/>
+<use xlink:href="#p" x="80" y="56"/>
+<use xlink:href="#p" x="80" y="64"/>
+<use xlink:href="#p" x="80" y="72"/>
+<use xlink:href="#p" x="80" y="80"/>
+<use xlink:href="#p" x="80" y="96"/>
+<use xlink:href="#p" x="80" y="112"/>
+<use xlink:href="#p" x="80" y="128"/>
+<use xlink:href="#p" x="80" y="144"/>
+<use xlink:href="#p" x="80" y="160"/>
+<use xlink:href="#p" x="80" y="176"/>
+<use xlink:href="#p" x="80" y="192"/>
+<use xlink:href="#p" x="80" y="208"/>
+<use xlink:href="#p" x="80" y="224"/>
+<use xlink:href="#p" x="80" y="240"/>
+<use xlink:href="#p" x="80" y="256"/>
+<use xlink:href="#p" x="80" y="272"/>
+<use xlink:href="#p" x="80" y="288"/>
+<use xlink:href="#p" x="80" y="304"/>
+<use xlink:href="#p" x="80" y="320"/>
+<use xlink:href="#p" x="80" y="336"/>
+<use xlink:href="#p" x="80" y="344"/>
+<use xlink:href="#p" x="80" y="352"/>
+<use xlink:href="#p" x="80" y="360"/>
+<use xlink:href="#p" x="80" y="368"/>
+<use xlink:href="#p" x="80" y="376"/>
+<use xlink:href="#p" x="80" y="384"/>
+<use xlink:href="#p" x="88" y="104"/>
+<use xlink:href="#p" x="88" y="112"/>
+<use xlink:href="#p" x="88" y="120"/>
+<use xlink:href="#p" x="88" y="152"/>
+<use xlink:href="#p" x="88" y="168"/>
+<use xlink:href="#p" x="88" y="192"/>
+<use xlink:href="#p" x="88" y="224"/>
+<use xlink:href="#p" x="88" y="248"/>
+<use xlink:href="#p" x="88" y="272"/>
+<use xlink:href="#p" x="88" y="280"/>
+<use xlink:href="#p" x="88" y="304"/>
+<use xlink:href="#p" x="88" y="320"/>
+<use xlink:href="#p" x="96" y="48"/>
+<use xlink:href="#p" x="96" y="56"/>
+<use xlink:href="#p" x="96" y="64"/>
+<use xlink:href="#p" x="96" y="72"/>
+<use xlink:href="#p" x="96" y="80"/>
+<use xlink:href="#p" x="96" y="88"/>
+<use xlink:href="#p" x="96" y="104"/>
+<use xlink:href="#p" x="96" y="112"/>
+<use xlink:href="#p" x="96" y="128"/>
+<use xlink:href="#p" x="96" y="136"/>
+<use xlink:href="#p" x="96" y="160"/>
+<use xlink:href="#p" x="96" y="184"/>
+<use xlink:href="#p" x="96" y="192"/>
+<use xlink:href="#p" x="96" y="200"/>
+<use xlink:href="#p" x="96" y="208"/>
+<use xlink:href="#p" x="96" y="216"/>
+<use xlink:href="#p" x="96" y="224"/>
+<use xlink:href="#p" x="96" y="240"/>
+<use xlink:href="#p" x="96" y="248"/>
+<use xlink:href="#p" x="96" y="256"/>
+<use xlink:href="#p" x="96" y="264"/>
+<use xlink:href="#p" x="96" y="288"/>
+<use xlink:href="#p" x="96" y="304"/>
+<use xlink:href="#p" x="96" y="328"/>
+<use xlink:href="#p" x="96" y="344"/>
+<use xlink:href="#p" x="96" y="352"/>
+<use xlink:href="#p" x="96" y="360"/>
+<use xlink:href="#p" x="96" y="368"/>
+<use xlink:href="#p" x="96" y="384"/>
+<use xlink:href="#p" x="104" y="40"/>
+<use xlink:href="#p" x="104" y="48"/>
+<use xlink:href="#p" x="104" y="56"/>
+<use xlink:href="#p" x="104" y="88"/>
+<use xlink:href="#p" x="104" y="128"/>
+<use xlink:href="#p" x="104" y="136"/>
+<use xlink:href="#p" x="104" y="160"/>
+<use xlink:href="#p" x="104" y="168"/>
+<use xlink:href="#p" x="104" y="176"/>
+<use xlink:href="#p" x="104" y="192"/>
+<use xlink:href="#p" x="104" y="200"/>
+<use xlink:href="#p" x="104" y="208"/>
+<use xlink:href="#p" x="104" y="216"/>
+<use xlink:href="#p" x="104" y="248"/>
+<use xlink:href="#p" x="104" y="256"/>
+<use xlink:href="#p" x="104" y="272"/>
+<use xlink:href="#p" x="104" y="304"/>
+<use xlink:href="#p" x="104" y="312"/>
+<use xlink:href="#p" x="104" y="328"/>
+<use xlink:href="#p" x="104" y="336"/>
+<use xlink:href="#p" x="104" y="344"/>
+<use xlink:href="#p" x="104" y="352"/>
+<use xlink:href="#p" x="112" y="32"/>
+<use xlink:href="#p" x="112" y="40"/>
+<use xlink:href="#p" x="112" y="48"/>
+<use xlink:href="#p" x="112" y="80"/>
+<use xlink:href="#p" x="112" y="96"/>
+<use xlink:href="#p" x="112" y="104"/>
+<use xlink:href="#p" x="112" y="112"/>
+<use xlink:href="#p" x="112" y="128"/>
+<use xlink:href="#p" x="112" y="152"/>
+<use xlink:href="#p" x="112" y="168"/>
+<use xlink:href="#p" x="112" y="192"/>
+<use xlink:href="#p" x="112" y="256"/>
+<use xlink:href="#p" x="112" y="272"/>
+<use xlink:href="#p" x="112" y="280"/>
+<use xlink:href="#p" x="112" y="304"/>
+<use xlink:href="#p" x="112" y="312"/>
+<use xlink:href="#p" x="112" y="336"/>
+<use xlink:href="#p" x="112" y="368"/>
+<use xlink:href="#p" x="112" y="376"/>
+<use xlink:href="#p" x="120" y="56"/>
+<use xlink:href="#p" x="120" y="64"/>
+<use xlink:href="#p" x="120" y="96"/>
+<use xlink:href="#p" x="120" y="104"/>
+<use xlink:href="#p" x="120" y="112"/>
+<use xlink:href="#p" x="120" y="120"/>
+<use xlink:href="#p" x="120" y="136"/>
+<use xlink:href="#p" x="120" y="152"/>
+<use xlink:href="#p" x="120" y="160"/>
+<use xlink:href="#p" x="120" y="184"/>
+<use xlink:href="#p" x="120" y="192"/>
+<use xlink:href="#p" x="120" y="200"/>
+<use xlink:href="#p" x="120" y="216"/>
+<use xlink:href="#p" x="120" y="224"/>
+<use xlink:href="#p" x="120" y="232"/>
+<use xlink:href="#p" x="120" y="240"/>
+<use xlink:href="#p" x="120" y="272"/>
+<use xlink:href="#p" x="120" y="280"/>
+<use xlink:href="#p" x="120" y="320"/>
+<use xlink:href="#p" x="120" y="344"/>
+<use xlink:href="#p" x="120" y="352"/>
+<use xlink:href="#p" x="120" y="368"/>
+<use xlink:href="#p" x="120" y="376"/>
+<use xlink:href="#p" x="128" y="32"/>
+<use xlink:href="#p" x="128" y="40"/>
+<use xlink:href="#p" x="128" y="48"/>
+<use xlink:href="#p" x="128" y="64"/>
+<use xlink:href="#p" x="128" y="80"/>
+<use xlink:href="#p" x="128" y="88"/>
+<use xlink:href="#p" x="128" y="104"/>
+<use xlink:href="#p" x="128" y="112"/>
+<use xlink:href="#p" x="128" y="128"/>
+<use xlink:href="#p" x="128" y="136"/>
+<use xlink:href="#p" x="128" y="152"/>
+<use xlink:href="#p" x="128" y="160"/>
+<use xlink:href="#p" x="128" y="168"/>
+<use xlink:href="#p" x="128" y="176"/>
+<use xlink:href="#p" x="128" y="184"/>
+<use xlink:href="#p" x="128" y="208"/>
+<use xlink:href="#p" x="128" y="216"/>
+<use xlink:href="#p" x="128" y="224"/>
+<use xlink:href="#p" x="128" y="232"/>
+<use xlink:href="#p" x="128" y="248"/>
+<use xlink:href="#p" x="128" y="256"/>
+<use xlink:href="#p" x="128" y="264"/>
+<use xlink:href="#p" x="128" y="272"/>
+<use xlink:href="#p" x="128" y="296"/>
+<use xlink:href="#p" x="128" y="304"/>
+<use xlink:href="#p" x="128" y="344"/>
+<use xlink:href="#p" x="128" y="352"/>
+<use xlink:href="#p" x="128" y="376"/>
+<use xlink:href="#p" x="128" y="384"/>
+<use xlink:href="#p" x="136" y="40"/>
+<use xlink:href="#p" x="136" y="48"/>
+<use xlink:href="#p" x="136" y="56"/>
+<use xlink:href="#p" x="136" y="104"/>
+<use xlink:href="#p" x="136" y="112"/>
+<use xlink:href="#p" x="136" y="120"/>
+<use xlink:href="#p" x="136" y="128"/>
+<use xlink:href="#p" x="136" y="136"/>
+<use xlink:href="#p" x="136" y="144"/>
+<use xlink:href="#p" x="136" y="160"/>
+<use xlink:href="#p" x="136" y="168"/>
+<use xlink:href="#p" x="136" y="192"/>
+<use xlink:href="#p" x="136" y="200"/>
+<use xlink:href="#p" x="136" y="256"/>
+<use xlink:href="#p" x="136" y="264"/>
+<use xlink:href="#p" x="136" y="272"/>
+<use xlink:href="#p" x="136" y="296"/>
+<use xlink:href="#p" x="136" y="312"/>
+<use xlink:href="#p" x="136" y="320"/>
+<use xlink:href="#p" x="136" y="344"/>
+<use xlink:href="#p" x="136" y="352"/>
+<use xlink:href="#p" x="136" y="368"/>
+<use xlink:href="#p" x="144" y="48"/>
+<use xlink:href="#p" x="144" y="80"/>
+<use xlink:href="#p" x="144" y="128"/>
+<use xlink:href="#p" x="144" y="168"/>
+<use xlink:href="#p" x="144" y="184"/>
+<use xlink:href="#p" x="144" y="208"/>
+<use xlink:href="#p" x="144" y="216"/>
+<use xlink:href="#p" x="144" y="232"/>
+<use xlink:href="#p" x="144" y="240"/>
+<use xlink:href="#p" x="144" y="248"/>
+<use xlink:href="#p" x="144" y="256"/>
+<use xlink:href="#p" x="144" y="264"/>
+<use xlink:href="#p" x="144" y="296"/>
+<use xlink:href="#p" x="144" y="320"/>
+<use xlink:href="#p" x="144" y="328"/>
+<use xlink:href="#p" x="144" y="360"/>
+<use xlink:href="#p" x="144" y="368"/>
+<use xlink:href="#p" x="144" y="376"/>
+<use xlink:href="#p" x="152" y="32"/>
+<use xlink:href="#p" x="152" y="40"/>
+<use xlink:href="#p" x="152" y="48"/>
+<use xlink:href="#p" x="152" y="56"/>
+<use xlink:href="#p" x="152" y="72"/>
+<use xlink:href="#p" x="152" y="88"/>
+<use xlink:href="#p" x="152" y="96"/>
+<use xlink:href="#p" x="152" y="112"/>
+<use xlink:href="#p" x="152" y="144"/>
+<use xlink:href="#p" x="152" y="152"/>
+<use xlink:href="#p" x="152" y="176"/>
+<use xlink:href="#p" x="152" y="184"/>
+<use xlink:href="#p" x="152" y="192"/>
+<use xlink:href="#p" x="152" y="208"/>
+<use xlink:href="#p" x="152" y="224"/>
+<use xlink:href="#p" x="152" y="232"/>
+<use xlink:href="#p" x="152" y="240"/>
+<use xlink:href="#p" x="152" y="248"/>
+<use xlink:href="#p" x="152" y="256"/>
+<use xlink:href="#p" x="152" y="264"/>
+<use xlink:href="#p" x="152" y="272"/>
+<use xlink:href="#p" x="152" y="280"/>
+<use xlink:href="#p" x="152" y="288"/>
+<use xlink:href="#p" x="152" y="312"/>
+<use xlink:href="#p" x="152" y="360"/>
+<use xlink:href="#p" x="152" y="384"/>
+<use xlink:href="#p" x="160" y="32"/>
+<use xlink:href="#p" x="160" y="40"/>
+<use xlink:href="#p" x="160" y="48"/>
+<use xlink:href="#p" x="160" y="80"/>
+<use xlink:href="#p" x="160" y="96"/>
+<use xlink:href="#p" x="160" y="104"/>
+<use xlink:href="#p" x="160" y="112"/>
+<use xlink:href="#p" x="160" y="120"/>
+<use xlink:href="#p" x="160" y="128"/>
+<use xlink:href="#p" x="160" y="136"/>
+<use xlink:href="#p" x="160" y="152"/>
+<use xlink:href="#p" x="160" y="160"/>
+<use xlink:href="#p" x="160" y="168"/>
+<use xlink:href="#p" x="160" y="176"/>
+<use xlink:href="#p" x="160" y="184"/>
+<use xlink:href="#p" x="160" y="192"/>
+<use xlink:href="#p" x="160" y="208"/>
+<use xlink:href="#p" x="160" y="216"/>
+<use xlink:href="#p" x="160" y="224"/>
+<use xlink:href="#p" x="160" y="248"/>
+<use xlink:href="#p" x="160" y="256"/>
+<use xlink:href="#p" x="160" y="288"/>
+<use xlink:href="#p" x="160" y="312"/>
+<use xlink:href="#p" x="160" y="352"/>
+<use xlink:href="#p" x="160" y="360"/>
+<use xlink:href="#p" x="160" y="368"/>
+<use xlink:href="#p" x="160" y="376"/>
+<use xlink:href="#p" x="168" y="32"/>
+<use xlink:href="#p" x="168" y="48"/>
+<use xlink:href="#p" x="168" y="64"/>
+<use xlink:href="#p" x="168" y="72"/>
+<use xlink:href="#p" x="168" y="96"/>
+<use xlink:href="#p" x="168" y="136"/>
+<use xlink:href="#p" x="168" y="144"/>
+<use xlink:href="#p" x="168" y="168"/>
+<use xlink:href="#p" x="168" y="184"/>
+<use xlink:href="#p" x="168" y="200"/>
+<use xlink:href="#p" x="168" y="216"/>
+<use xlink:href="#p" x="168" y="232"/>
+<use xlink:href="#p" x="168" y="240"/>
+<use xlink:href="#p" x="168" y="256"/>
+<use xlink:href="#p" x="168" y="264"/>
+<use xlink:href="#p" x="168" y="272"/>
+<use xlink:href="#p" x="168" y="312"/>
+<use xlink:href="#p" x="168" y="376"/>
+<use xlink:href="#p" x="168" y="384"/>
+<use xlink:href="#p" x="176" y="40"/>
+<use xlink:href="#p" x="176" y="48"/>
+<use xlink:href="#p" x="176" y="56"/>
+<use xlink:href="#p" x="176" y="80"/>
+<use xlink:href="#p" x="176" y="104"/>
+<use xlink:href="#p" x="176" y="112"/>
+<use xlink:href="#p" x="176" y="120"/>
+<use xlink:href="#p" x="176" y="128"/>
+<use xlink:href="#p" x="176" y="144"/>
+<use xlink:href="#p" x="176" y="152"/>
+<use xlink:href="#p" x="176" y="160"/>
+<use xlink:href="#p" x="176" y="176"/>
+<use xlink:href="#p" x="176" y="184"/>
+<use xlink:href="#p" x="176" y="192"/>
+<use xlink:href="#p" x="176" y="208"/>
+<use xlink:href="#p" x="176" y="216"/>
+<use xlink:href="#p" x="176" y="224"/>
+<use xlink:href="#p" x="176" y="232"/>
+<use xlink:href="#p" x="176" y="240"/>
+<use xlink:href="#p" x="176" y="248"/>
+<use xlink:href="#p" x="176" y="272"/>
+<use xlink:href="#p" x="176" y="288"/>
+<use xlink:href="#p" x="176" y="312"/>
+<use xlink:href="#p" x="176" y="328"/>
+<use xlink:href="#p" x="176" y="336"/>
+<use xlink:href="#p" x="176" y="360"/>
+<use xlink:href="#p" x="184" y="56"/>
+<use xlink:href="#p" x="184" y="112"/>
+<use xlink:href="#p" x="184" y="128"/>
+<use xlink:href="#p" x="184" y="144"/>
+<use xlink:href="#p" x="184" y="176"/>
+<use xlink:href="#p" x="184" y="200"/>
+<use xlink:href="#p" x="184" y="224"/>
+<use xlink:href="#p" x="184" y="232"/>
+<use xlink:href="#p" x="184" y="256"/>
+<use xlink:href="#p" x="184" y="272"/>
+<use xlink:href="#p" x="184" y="280"/>
+<use xlink:href="#p" x="184" y="288"/>
+<use xlink:href="#p" x="184" y="296"/>
+<use xlink:href="#p" x="184" y="312"/>
+<use xlink:href="#p" x="184" y="328"/>
+<use xlink:href="#p" x="184" y="336"/>
+<use xlink:href="#p" x="184" y="360"/>
+<use xlink:href="#p" x="184" y="368"/>
+<use xlink:href="#p" x="184" y="384"/>
+<use xlink:href="#p" x="192" y="56"/>
+<use xlink:href="#p" x="192" y="64"/>
+<use xlink:href="#p" x="192" y="72"/>
+<use xlink:href="#p" x="192" y="80"/>
+<use xlink:href="#p" x="192" y="88"/>
+<use xlink:href="#p" x="192" y="96"/>
+<use xlink:href="#p" x="192" y="104"/>
+<use xlink:href="#p" x="192" y="144"/>
+<use xlink:href="#p" x="192" y="160"/>
+<use xlink:href="#p" x="192" y="176"/>
+<use xlink:href="#p" x="192" y="192"/>
+<use xlink:href="#p" x="192" y="200"/>
+<use xlink:href="#p" x="192" y="208"/>
+<use xlink:href="#p" x="192" y="216"/>
+<use xlink:href="#p" x="192" y="224"/>
+<use xlink:href="#p" x="192" y="232"/>
+<use xlink:href="#p" x="192" y="240"/>
+<use xlink:href="#p" x="192" y="264"/>
+<use xlink:href="#p" x="192" y="280"/>
+<use xlink:href="#p" x="192" y="288"/>
+<use xlink:href="#p" x="192" y="312"/>
+<use xlink:href="#p" x="192" y="320"/>
+<use xlink:href="#p" x="192" y="328"/>
+<use xlink:href="#p" x="192" y="336"/>
+<use xlink:href="#p" x="192" y="344"/>
+<use xlink:href="#p" x="192" y="352"/>
+<use xlink:href="#p" x="192" y="376"/>
+<use xlink:href="#p" x="200" y="56"/>
+<use xlink:href="#p" x="200" y="64"/>
+<use xlink:href="#p" x="200" y="96"/>
+<use xlink:href="#p" x="200" y="104"/>
+<use xlink:href="#p" x="200" y="128"/>
+<use xlink:href="#p" x="200" y="144"/>
+<use xlink:href="#p" x="200" y="160"/>
+<use xlink:href="#p" x="200" y="176"/>
+<use xlink:href="#p" x="200" y="192"/>
+<use xlink:href="#p" x="200" y="224"/>
+<use xlink:href="#p" x="200" y="256"/>
+<use xlink:href="#p" x="200" y="272"/>
+<use xlink:href="#p" x="200" y="288"/>
+<use xlink:href="#p" x="200" y="304"/>
+<use xlink:href="#p" x="200" y="320"/>
+<use xlink:href="#p" x="200" y="352"/>
+<use xlink:href="#p" x="200" y="360"/>
+<use xlink:href="#p" x="200" y="376"/>
+<use xlink:href="#p" x="200" y="384"/>
+<use xlink:href="#p" x="208" y="32"/>
+<use xlink:href="#p" x="208" y="40"/>
+<use xlink:href="#p" x="208" y="56"/>
+<use xlink:href="#p" x="208" y="64"/>
+<use xlink:href="#p" x="208" y="80"/>
+<use xlink:href="#p" x="208" y="96"/>
+<use xlink:href="#p" x="208" y="136"/>
+<use xlink:href="#p" x="208" y="144"/>
+<use xlink:href="#p" x="208" y="152"/>
+<use xlink:href="#p" x="208" y="168"/>
+<use xlink:href="#p" x="208" y="176"/>
+<use xlink:href="#p" x="208" y="192"/>
+<use xlink:href="#p" x="208" y="208"/>
+<use xlink:href="#p" x="208" y="224"/>
+<use xlink:href="#p" x="208" y="232"/>
+<use xlink:href="#p" x="208" y="240"/>
+<use xlink:href="#p" x="208" y="264"/>
+<use xlink:href="#p" x="208" y="280"/>
+<use xlink:href="#p" x="208" y="296"/>
+<use xlink:href="#p" x="208" y="320"/>
+<use xlink:href="#p" x="208" y="336"/>
+<use xlink:href="#p" x="208" y="352"/>
+<use xlink:href="#p" x="216" y="64"/>
+<use xlink:href="#p" x="216" y="96"/>
+<use xlink:href="#p" x="216" y="104"/>
+<use xlink:href="#p" x="216" y="120"/>
+<use xlink:href="#p" x="216" y="136"/>
+<use xlink:href="#p" x="216" y="176"/>
+<use xlink:href="#p" x="216" y="184"/>
+<use xlink:href="#p" x="216" y="192"/>
+<use xlink:href="#p" x="216" y="224"/>
+<use xlink:href="#p" x="216" y="248"/>
+<use xlink:href="#p" x="216" y="256"/>
+<use xlink:href="#p" x="216" y="280"/>
+<use xlink:href="#p" x="216" y="296"/>
+<use xlink:href="#p" x="216" y="304"/>
+<use xlink:href="#p" x="216" y="320"/>
+<use xlink:href="#p" x="216" y="352"/>
+<use xlink:href="#p" x="216" y="384"/>
+<use xlink:href="#p" x="224" y="40"/>
+<use xlink:href="#p" x="224" y="56"/>
+<use xlink:href="#p" x="224" y="64"/>
+<use xlink:href="#p" x="224" y="72"/>
+<use xlink:href="#p" x="224" y="80"/>
+<use xlink:href="#p" x="224" y="88"/>
+<use xlink:href="#p" x="224" y="96"/>
+<use xlink:href="#p" x="224" y="104"/>
+<use xlink:href="#p" x="224" y="112"/>
+<use xlink:href="#p" x="224" y="120"/>
+<use xlink:href="#p" x="224" y="128"/>
+<use xlink:href="#p" x="224" y="144"/>
+<use xlink:href="#p" x="224" y="152"/>
+<use xlink:href="#p" x="224" y="160"/>
+<use xlink:href="#p" x="224" y="176"/>
+<use xlink:href="#p" x="224" y="192"/>
+<use xlink:href="#p" x="224" y="200"/>
+<use xlink:href="#p" x="224" y="208"/>
+<use xlink:href="#p" x="224" y="216"/>
+<use xlink:href="#p" x="224" y="224"/>
+<use xlink:href="#p" x="224" y="232"/>
+<use xlink:href="#p" x="224" y="248"/>
+<use xlink:href="#p" x="224" y="264"/>
+<use xlink:href="#p" x="224" y="272"/>
+<use xlink:href="#p" x="224" y="312"/>
+<use xlink:href="#p" x="224" y="320"/>
+<use xlink:href="#p" x="224" y="328"/>
+<use xlink:href="#p" x="224" y="336"/>
+<use xlink:href="#p" x="224" y="344"/>
+<use xlink:href="#p" x="224" y="352"/>
+<use xlink:href="#p" x="224" y="360"/>
+<use xlink:href="#p" x="224" y="368"/>
+<use xlink:href="#p" x="224" y="384"/>
+<use xlink:href="#p" x="232" y="32"/>
+<use xlink:href="#p" x="232" y="56"/>
+<use xlink:href="#p" x="232" y="72"/>
+<use xlink:href="#p" x="232" y="88"/>
+<use xlink:href="#p" x="232" y="128"/>
+<use xlink:href="#p" x="232" y="136"/>
+<use xlink:href="#p" x="232" y="152"/>
+<use xlink:href="#p" x="232" y="176"/>
+<use xlink:href="#p" x="232" y="184"/>
+<use xlink:href="#p" x="232" y="200"/>
+<use xlink:href="#p" x="232" y="216"/>
+<use xlink:href="#p" x="232" y="232"/>
+<use xlink:href="#p" x="232" y="248"/>
+<use xlink:href="#p" x="232" y="280"/>
+<use xlink:href="#p" x="232" y="304"/>
+<use xlink:href="#p" x="232" y="320"/>
+<use xlink:href="#p" x="232" y="336"/>
+<use xlink:href="#p" x="232" y="360"/>
+<use xlink:href="#p" x="232" y="376"/>
+<use xlink:href="#p" x="240" y="80"/>
+<use xlink:href="#p" x="240" y="96"/>
+<use xlink:href="#p" x="240" y="112"/>
+<use xlink:href="#p" x="240" y="120"/>
+<use xlink:href="#p" x="240" y="144"/>
+<use xlink:href="#p" x="240" y="152"/>
+<use xlink:href="#p" x="240" y="160"/>
+<use xlink:href="#p" x="240" y="176"/>
+<use xlink:href="#p" x="240" y="184"/>
+<use xlink:href="#p" x="240" y="192"/>
+<use xlink:href="#p" x="240" y="200"/>
+<use xlink:href="#p" x="240" y="216"/>
+<use xlink:href="#p" x="240" y="224"/>
+<use xlink:href="#p" x="240" y="240"/>
+<use xlink:href="#p" x="240" y="248"/>
+<use xlink:href="#p" x="240" y="272"/>
+<use xlink:href="#p" x="240" y="288"/>
+<use xlink:href="#p" x="240" y="304"/>
+<use xlink:href="#p" x="240" y="352"/>
+<use xlink:href="#p" x="240" y="368"/>
+<use xlink:href="#p" x="240" y="376"/>
+<use xlink:href="#p" x="240" y="384"/>
+<use xlink:href="#p" x="248" y="40"/>
+<use xlink:href="#p" x="248" y="48"/>
+<use xlink:href="#p" x="248" y="72"/>
+<use xlink:href="#p" x="248" y="120"/>
+<use xlink:href="#p" x="248" y="136"/>
+<use xlink:href="#p" x="248" y="160"/>
+<use xlink:href="#p" x="248" y="168"/>
+<use xlink:href="#p" x="248" y="176"/>
+<use xlink:href="#p" x="248" y="184"/>
+<use xlink:href="#p" x="248" y="216"/>
+<use xlink:href="#p" x="248" y="248"/>
+<use xlink:href="#p" x="248" y="256"/>
+<use xlink:href="#p" x="248" y="264"/>
+<use xlink:href="#p" x="248" y="272"/>
+<use xlink:href="#p" x="248" y="288"/>
+<use xlink:href="#p" x="248" y="304"/>
+<use xlink:href="#p" x="248" y="312"/>
+<use xlink:href="#p" x="248" y="344"/>
+<use xlink:href="#p" x="248" y="360"/>
+<use xlink:href="#p" x="248" y="384"/>
+<use xlink:href="#p" x="256" y="48"/>
+<use xlink:href="#p" x="256" y="80"/>
+<use xlink:href="#p" x="256" y="88"/>
+<use xlink:href="#p" x="256" y="104"/>
+<use xlink:href="#p" x="256" y="112"/>
+<use xlink:href="#p" x="256" y="128"/>
+<use xlink:href="#p" x="256" y="136"/>
+<use xlink:href="#p" x="256" y="144"/>
+<use xlink:href="#p" x="256" y="152"/>
+<use xlink:href="#p" x="256" y="184"/>
+<use xlink:href="#p" x="256" y="208"/>
+<use xlink:href="#p" x="256" y="216"/>
+<use xlink:href="#p" x="256" y="232"/>
+<use xlink:href="#p" x="256" y="280"/>
+<use xlink:href="#p" x="256" y="304"/>
+<use xlink:href="#p" x="256" y="312"/>
+<use xlink:href="#p" x="256" y="328"/>
+<use xlink:href="#p" x="256" y="344"/>
+<use xlink:href="#p" x="256" y="360"/>
+<use xlink:href="#p" x="256" y="368"/>
+<use xlink:href="#p" x="256" y="376"/>
+<use xlink:href="#p" x="264" y="32"/>
+<use xlink:href="#p" x="264" y="48"/>
+<use xlink:href="#p" x="264" y="56"/>
+<use xlink:href="#p" x="264" y="64"/>
+<use xlink:href="#p" x="264" y="72"/>
+<use xlink:href="#p" x="264" y="104"/>
+<use xlink:href="#p" x="264" y="112"/>
+<use xlink:href="#p" x="264" y="120"/>
+<use xlink:href="#p" x="264" y="128"/>
+<use xlink:href="#p" x="264" y="144"/>
+<use xlink:href="#p" x="264" y="168"/>
+<use xlink:href="#p" x="264" y="176"/>
+<use xlink:href="#p" x="264" y="200"/>
+<use xlink:href="#p" x="264" y="240"/>
+<use xlink:href="#p" x="264" y="264"/>
+<use xlink:href="#p" x="264" y="328"/>
+<use xlink:href="#p" x="264" y="344"/>
+<use xlink:href="#p" x="264" y="352"/>
+<use xlink:href="#p" x="264" y="368"/>
+<use xlink:href="#p" x="264" y="384"/>
+<use xlink:href="#p" x="272" y="32"/>
+<use xlink:href="#p" x="272" y="48"/>
+<use xlink:href="#p" x="272" y="56"/>
+<use xlink:href="#p" x="272" y="64"/>
+<use xlink:href="#p" x="272" y="80"/>
+<use xlink:href="#p" x="272" y="88"/>
+<use xlink:href="#p" x="272" y="104"/>
+<use xlink:href="#p" x="272" y="112"/>
+<use xlink:href="#p" x="272" y="120"/>
+<use xlink:href="#p" x="272" y="128"/>
+<use xlink:href="#p" x="272" y="136"/>
+<use xlink:href="#p" x="272" y="152"/>
+<use xlink:href="#p" x="272" y="168"/>
+<use xlink:href="#p" x="272" y="192"/>
+<use xlink:href="#p" x="272" y="200"/>
+<use xlink:href="#p" x="272" y="208"/>
+<use xlink:href="#p" x="272" y="216"/>
+<use xlink:href="#p" x="272" y="232"/>
+<use xlink:href="#p" x="272" y="248"/>
+<use xlink:href="#p" x="272" y="256"/>
+<use xlink:href="#p" x="272" y="264"/>
+<use xlink:href="#p" x="272" y="272"/>
+<use xlink:href="#p" x="272" y="280"/>
+<use xlink:href="#p" x="272" y="296"/>
+<use xlink:href="#p" x="272" y="312"/>
+<use xlink:href="#p" x="272" y="320"/>
+<use xlink:href="#p" x="272" y="328"/>
+<use xlink:href="#p" x="272" y="344"/>
+<use xlink:href="#p" x="272" y="352"/>
+<use xlink:href="#p" x="272" y="360"/>
+<use xlink:href="#p" x="272" y="376"/>
+<use xlink:href="#p" x="280" y="40"/>
+<use xlink:href="#p" x="280" y="48"/>
+<use xlink:href="#p" x="280" y="72"/>
+<use xlink:href="#p" x="280" y="96"/>
+<use xlink:href="#p" x="280" y="120"/>
+<use xlink:href="#p" x="280" y="128"/>
+<use xlink:href="#p" x="280" y="144"/>
+<use xlink:href="#p" x="280" y="152"/>
+<use xlink:href="#p" x="280" y="168"/>
+<use xlink:href="#p" x="280" y="184"/>
+<use xlink:href="#p" x="280" y="216"/>
+<use xlink:href="#p" x="280" y="256"/>
+<use xlink:href="#p" x="280" y="264"/>
+<use xlink:href="#p" x="280" y="280"/>
+<use xlink:href="#p" x="280" y="312"/>
+<use xlink:href="#p" x="280" y="328"/>
+<use xlink:href="#p" x="280" y="344"/>
+<use xlink:href="#p" x="280" y="384"/>
+<use xlink:href="#p" x="288" y="48"/>
+<use xlink:href="#p" x="288" y="80"/>
+<use xlink:href="#p" x="288" y="104"/>
+<use xlink:href="#p" x="288" y="120"/>
+<use xlink:href="#p" x="288" y="136"/>
+<use xlink:href="#p" x="288" y="144"/>
+<use xlink:href="#p" x="288" y="152"/>
+<use xlink:href="#p" x="288" y="184"/>
+<use xlink:href="#p" x="288" y="216"/>
+<use xlink:href="#p" x="288" y="248"/>
+<use xlink:href="#p" x="288" y="272"/>
+<use xlink:href="#p" x="288" y="280"/>
+<use xlink:href="#p" x="288" y="312"/>
+<use xlink:href="#p" x="288" y="328"/>
+<use xlink:href="#p" x="288" y="344"/>
+<use xlink:href="#p" x="288" y="368"/>
+<use xlink:href="#p" x="288" y="376"/>
+<use xlink:href="#p" x="296" y="32"/>
+<use xlink:href="#p" x="296" y="48"/>
+<use xlink:href="#p" x="296" y="72"/>
+<use xlink:href="#p" x="296" y="96"/>
+<use xlink:href="#p" x="296" y="104"/>
+<use xlink:href="#p" x="296" y="144"/>
+<use xlink:href="#p" x="296" y="160"/>
+<use xlink:href="#p" x="296" y="168"/>
+<use xlink:href="#p" x="296" y="192"/>
+<use xlink:href="#p" x="296" y="200"/>
+<use xlink:href="#p" x="296" y="224"/>
+<use xlink:href="#p" x="296" y="232"/>
+<use xlink:href="#p" x="296" y="272"/>
+<use xlink:href="#p" x="296" y="296"/>
+<use xlink:href="#p" x="296" y="320"/>
+<use xlink:href="#p" x="296" y="328"/>
+<use xlink:href="#p" x="296" y="344"/>
+<use xlink:href="#p" x="296" y="352"/>
+<use xlink:href="#p" x="296" y="360"/>
+<use xlink:href="#p" x="296" y="384"/>
+<use xlink:href="#p" x="304" y="64"/>
+<use xlink:href="#p" x="304" y="80"/>
+<use xlink:href="#p" x="304" y="112"/>
+<use xlink:href="#p" x="304" y="144"/>
+<use xlink:href="#p" x="304" y="160"/>
+<use xlink:href="#p" x="304" y="176"/>
+<use xlink:href="#p" x="304" y="184"/>
+<use xlink:href="#p" x="304" y="192"/>
+<use xlink:href="#p" x="304" y="208"/>
+<use xlink:href="#p" x="304" y="224"/>
+<use xlink:href="#p" x="304" y="240"/>
+<use xlink:href="#p" x="304" y="248"/>
+<use xlink:href="#p" x="304" y="272"/>
+<use xlink:href="#p" x="304" y="304"/>
+<use xlink:href="#p" x="304" y="320"/>
+<use xlink:href="#p" x="304" y="336"/>
+<use xlink:href="#p" x="304" y="368"/>
+<use xlink:href="#p" x="304" y="376"/>
+<use xlink:href="#p" x="312" y="40"/>
+<use xlink:href="#p" x="312" y="48"/>
+<use xlink:href="#p" x="312" y="56"/>
+<use xlink:href="#p" x="312" y="64"/>
+<use xlink:href="#p" x="312" y="96"/>
+<use xlink:href="#p" x="312" y="136"/>
+<use xlink:href="#p" x="312" y="144"/>
+<use xlink:href="#p" x="312" y="160"/>
+<use xlink:href="#p" x="312" y="184"/>
+<use xlink:href="#p" x="312" y="200"/>
+<use xlink:href="#p" x="312" y="208"/>
+<use xlink:href="#p" x="312" y="224"/>
+<use xlink:href="#p" x="312" y="248"/>
+<use xlink:href="#p" x="312" y="272"/>
+<use xlink:href="#p" x="312" y="280"/>
+<use xlink:href="#p" x="312" y="312"/>
+<use xlink:href="#p" x="312" y="336"/>
+<use xlink:href="#p" x="312" y="360"/>
+<use xlink:href="#p" x="312" y="368"/>
+<use xlink:href="#p" x="312" y="384"/>
+<use xlink:href="#p" x="320" y="32"/>
+<use xlink:href="#p" x="320" y="56"/>
+<use xlink:href="#p" x="320" y="64"/>
+<use xlink:href="#p" x="320" y="80"/>
+<use xlink:href="#p" x="320" y="88"/>
+<use xlink:href="#p" x="320" y="104"/>
+<use xlink:href="#p" x="320" y="112"/>
+<use xlink:href="#p" x="320" y="136"/>
+<use xlink:href="#p" x="320" y="152"/>
+<use xlink:href="#p" x="320" y="168"/>
+<use xlink:href="#p" x="320" y="184"/>
+<use xlink:href="#p" x="320" y="192"/>
+<use xlink:href="#p" x="320" y="200"/>
+<use xlink:href="#p" x="320" y="208"/>
+<use xlink:href="#p" x="320" y="216"/>
+<use xlink:href="#p" x="320" y="224"/>
+<use xlink:href="#p" x="320" y="248"/>
+<use xlink:href="#p" x="320" y="264"/>
+<use xlink:href="#p" x="320" y="312"/>
+<use xlink:href="#p" x="320" y="320"/>
+<use xlink:href="#p" x="320" y="328"/>
+<use xlink:href="#p" x="320" y="336"/>
+<use xlink:href="#p" x="320" y="344"/>
+<use xlink:href="#p" x="320" y="352"/>
+<use xlink:href="#p" x="320" y="368"/>
+<use xlink:href="#p" x="328" y="112"/>
+<use xlink:href="#p" x="328" y="120"/>
+<use xlink:href="#p" x="328" y="136"/>
+<use xlink:href="#p" x="328" y="144"/>
+<use xlink:href="#p" x="328" y="176"/>
+<use xlink:href="#p" x="328" y="192"/>
+<use xlink:href="#p" x="328" y="224"/>
+<use xlink:href="#p" x="328" y="232"/>
+<use xlink:href="#p" x="328" y="240"/>
+<use xlink:href="#p" x="328" y="264"/>
+<use xlink:href="#p" x="328" y="280"/>
+<use xlink:href="#p" x="328" y="304"/>
+<use xlink:href="#p" x="328" y="320"/>
+<use xlink:href="#p" x="328" y="352"/>
+<use xlink:href="#p" x="328" y="368"/>
+<use xlink:href="#p" x="328" y="384"/>
+<use xlink:href="#p" x="336" y="32"/>
+<use xlink:href="#p" x="336" y="40"/>
+<use xlink:href="#p" x="336" y="48"/>
+<use xlink:href="#p" x="336" y="56"/>
+<use xlink:href="#p" x="336" y="64"/>
+<use xlink:href="#p" x="336" y="72"/>
+<use xlink:href="#p" x="336" y="80"/>
+<use xlink:href="#p" x="336" y="96"/>
+<use xlink:href="#p" x="336" y="112"/>
+<use xlink:href="#p" x="336" y="144"/>
+<use xlink:href="#p" x="336" y="176"/>
+<use xlink:href="#p" x="336" y="184"/>
+<use xlink:href="#p" x="336" y="192"/>
+<use xlink:href="#p" x="336" y="208"/>
+<use xlink:href="#p" x="336" y="224"/>
+<use xlink:href="#p" x="336" y="248"/>
+<use xlink:href="#p" x="336" y="280"/>
+<use xlink:href="#p" x="336" y="296"/>
+<use xlink:href="#p" x="336" y="312"/>
+<use xlink:href="#p" x="336" y="320"/>
+<use xlink:href="#p" x="336" y="336"/>
+<use xlink:href="#p" x="336" y="352"/>
+<use xlink:href="#p" x="336" y="368"/>
+<use xlink:href="#p" x="336" y="384"/>
+<use xlink:href="#p" x="344" y="32"/>
+<use xlink:href="#p" x="344" y="80"/>
+<use xlink:href="#p" x="344" y="96"/>
+<use xlink:href="#p" x="344" y="104"/>
+<use xlink:href="#p" x="344" y="112"/>
+<use xlink:href="#p" x="344" y="120"/>
+<use xlink:href="#p" x="344" y="144"/>
+<use xlink:href="#p" x="344" y="160"/>
+<use xlink:href="#p" x="344" y="176"/>
+<use xlink:href="#p" x="344" y="192"/>
+<use xlink:href="#p" x="344" y="224"/>
+<use xlink:href="#p" x="344" y="248"/>
+<use xlink:href="#p" x="344" y="264"/>
+<use xlink:href="#p" x="344" y="272"/>
+<use xlink:href="#p" x="344" y="280"/>
+<use xlink:href="#p" x="344" y="288"/>
+<use xlink:href="#p" x="344" y="320"/>
+<use xlink:href="#p" x="344" y="352"/>
+<use xlink:href="#p" x="344" y="368"/>
+<use xlink:href="#p" x="352" y="32"/>
+<use xlink:href="#p" x="352" y="48"/>
+<use xlink:href="#p" x="352" y="56"/>
+<use xlink:href="#p" x="352" y="64"/>
+<use xlink:href="#p" x="352" y="80"/>
+<use xlink:href="#p" x="352" y="96"/>
+<use xlink:href="#p" x="352" y="120"/>
+<use xlink:href="#p" x="352" y="152"/>
+<use xlink:href="#p" x="352" y="168"/>
+<use xlink:href="#p" x="352" y="184"/>
+<use xlink:href="#p" x="352" y="192"/>
+<use xlink:href="#p" x="352" y="200"/>
+<use xlink:href="#p" x="352" y="208"/>
+<use xlink:href="#p" x="352" y="216"/>
+<use xlink:href="#p" x="352" y="224"/>
+<use xlink:href="#p" x="352" y="240"/>
+<use xlink:href="#p" x="352" y="256"/>
+<use xlink:href="#p" x="352" y="272"/>
+<use xlink:href="#p" x="352" y="288"/>
+<use xlink:href="#p" x="352" y="312"/>
+<use xlink:href="#p" x="352" y="320"/>
+<use xlink:href="#p" x="352" y="328"/>
+<use xlink:href="#p" x="352" y="336"/>
+<use xlink:href="#p" x="352" y="344"/>
+<use xlink:href="#p" x="352" y="352"/>
+<use xlink:href="#p" x="352" y="360"/>
+<use xlink:href="#p" x="360" y="32"/>
+<use xlink:href="#p" x="360" y="48"/>
+<use xlink:href="#p" x="360" y="56"/>
+<use xlink:href="#p" x="360" y="64"/>
+<use xlink:href="#p" x="360" y="80"/>
+<use xlink:href="#p" x="360" y="96"/>
+<use xlink:href="#p" x="360" y="104"/>
+<use xlink:href="#p" x="360" y="120"/>
+<use xlink:href="#p" x="360" y="160"/>
+<use xlink:href="#p" x="360" y="192"/>
+<use xlink:href="#p" x="360" y="224"/>
+<use xlink:href="#p" x="360" y="232"/>
+<use xlink:href="#p" x="360" y="240"/>
+<use xlink:href="#p" x="360" y="248"/>
+<use xlink:href="#p" x="360" y="288"/>
+<use xlink:href="#p" x="360" y="296"/>
+<use xlink:href="#p" x="360" y="304"/>
+<use xlink:href="#p" x="360" y="312"/>
+<use xlink:href="#p" x="360" y="352"/>
+<use xlink:href="#p" x="360" y="360"/>
+<use xlink:href="#p" x="360" y="368"/>
+<use xlink:href="#p" x="360" y="376"/>
+<use xlink:href="#p" x="360" y="384"/>
+<use xlink:href="#p" x="368" y="32"/>
+<use xlink:href="#p" x="368" y="48"/>
+<use xlink:href="#p" x="368" y="56"/>
+<use xlink:href="#p" x="368" y="64"/>
+<use xlink:href="#p" x="368" y="80"/>
+<use xlink:href="#p" x="368" y="96"/>
+<use xlink:href="#p" x="368" y="104"/>
+<use xlink:href="#p" x="368" y="112"/>
+<use xlink:href="#p" x="368" y="120"/>
+<use xlink:href="#p" x="368" y="136"/>
+<use xlink:href="#p" x="368" y="144"/>
+<use xlink:href="#p" x="368" y="152"/>
+<use xlink:href="#p" x="368" y="168"/>
+<use xlink:href="#p" x="368" y="176"/>
+<use xlink:href="#p" x="368" y="184"/>
+<use xlink:href="#p" x="368" y="200"/>
+<use xlink:href="#p" x="368" y="208"/>
+<use xlink:href="#p" x="368" y="216"/>
+<use xlink:href="#p" x="368" y="240"/>
+<use xlink:href="#p" x="368" y="248"/>
+<use xlink:href="#p" x="368" y="264"/>
+<use xlink:href="#p" x="368" y="272"/>
+<use xlink:href="#p" x="368" y="280"/>
+<use xlink:href="#p" x="368" y="296"/>
+<use xlink:href="#p" x="368" y="312"/>
+<use xlink:href="#p" x="368" y="328"/>
+<use xlink:href="#p" x="368" y="336"/>
+<use xlink:href="#p" x="368" y="344"/>
+<use xlink:href="#p" x="368" y="360"/>
+<use xlink:href="#p" x="368" y="368"/>
+<use xlink:href="#p" x="368" y="376"/>
+<use xlink:href="#p" x="376" y="32"/>
+<use xlink:href="#p" x="376" y="80"/>
+<use xlink:href="#p" x="376" y="104"/>
+<use xlink:href="#p" x="376" y="136"/>
+<use xlink:href="#p" x="376" y="152"/>
+<use xlink:href="#p" x="376" y="160"/>
+<use xlink:href="#p" x="376" y="168"/>
+<use xlink:href="#p" x="376" y="200"/>
+<use xlink:href="#p" x="376" y="232"/>
+<use xlink:href="#p" x="376" y="256"/>
+<use xlink:href="#p" x="376" y="264"/>
+<use xlink:href="#p" x="376" y="296"/>
+<use xlink:href="#p" x="376" y="328"/>
+<use xlink:href="#p" x="376" y="344"/>
+<use xlink:href="#p" x="376" y="368"/>
+<use xlink:href="#p" x="376" y="384"/>
+<use xlink:href="#p" x="384" y="32"/>
+<use xlink:href="#p" x="384" y="40"/>
+<use xlink:href="#p" x="384" y="48"/>
+<use xlink:href="#p" x="384" y="56"/>
+<use xlink:href="#p" x="384" y="64"/>
+<use xlink:href="#p" x="384" y="72"/>
+<use xlink:href="#p" x="384" y="80"/>
+<use xlink:href="#p" x="384" y="104"/>
+<use xlink:href="#p" x="384" y="136"/>
+<use xlink:href="#p" x="384" y="168"/>
+<use xlink:href="#p" x="384" y="200"/>
+<use xlink:href="#p" x="384" y="216"/>
+<use xlink:href="#p" x="384" y="232"/>
+<use xlink:href="#p" x="384" y="248"/>
+<use xlink:href="#p" x="384" y="256"/>
+<use xlink:href="#p" x="384" y="264"/>
+<use xlink:href="#p" x="384" y="296"/>
+<use xlink:href="#p" x="384" y="328"/>
+<use xlink:href="#p" x="384" y="360"/>
+</g>
+<g/></svg>
           </div>
         </div>
         <div id="pix-key-display" style="margin-top:16px;padding:10px 14px;background:var(--bg-elevated);border-radius:8px;font-size:11px;color:var(--text-muted);word-break:break-all;font-family:monospace;">
@@ -605,7 +1605,7 @@
           <div style="font-size:13px;font-weight:600;margin-bottom:10px;">Outras formas de ajudar</div>
           <div class="section-row" style="margin-bottom:6px;cursor:pointer" onclick="launchCli('github')">
             <div class="section-row-label" style="font-size:12px;">
-              <i data-lucide="github" size="14" class="accent-text"></i> Contribuir com código
+              <i data-lucide="code" size="14" class="accent-text"></i> Contribuir com código
             </div>
             <i data-lucide="chevron-right" size="14" style="color:var(--text-muted)"></i>
           </div>
@@ -628,9 +1628,9 @@
 
 </main><!-- /content -->
 
-<!-- ══════════════════════════════════════════════════════════
+<!-- ==========================================================
      VIDEO MODAL
-═══════════════════════════════════════════════════════════ -->
+=========================================================== -->
 <div class="modal-overlay" id="video-modal">
   <div class="modal-box">
     <div class="modal-header">
@@ -650,12 +1650,12 @@
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════════════
+<!-- ==========================================================
      JAVASCRIPT
-═══════════════════════════════════════════════════════════ -->
+=========================================================== -->
 <script>
 
-/* ══════════════════════════════════════════════════════════
+/* ==========================================================
    CONFIG — injetada pelo Electron via preload como window.MAINUAN_CONFIG
    Fallback embutido para desenvolvimento sem Electron.
 
@@ -665,13 +1665,13 @@
      "layouts" — grade de cards de layout
      "videos"  — grade de cards de vídeo
      "static"  — HTML já presente no DOM (sobre, contribuir)
-══════════════════════════════════════════════════════════ */
+========================================================== */
 const DEFAULT_CONFIG = {
   accent:  '#3daee9',
   palette: ['#d08040','#e8177d','#3daee9','#3dd425','#aab6b9','#a588cb'],
-  pixKey:  '',
+  pixKey:  'mestresemlinux@gmail.com',
 
-  /* ── Páginas — define sidebar e conteúdo ── */
+  /* -- Páginas — define sidebar e conteúdo -- */
   pages: [
     {
       id: 'inicio', label: 'Início', icon: 'house', type: 'home',
@@ -687,11 +1687,11 @@ const DEFAULT_CONFIG = {
       title: 'Navegadores', desc: 'Escolha seu navegador preferido para navegar na web.',
       gridId: 'grid-nav', dataKey: 'browsers'
     },
-    // {
-    //   id: 'layout', label: 'Layout', icon: 'layout-dashboard', type: 'layouts',
-    //   title: 'Layout do Desktop', desc: 'Escolha a disposição dos painéis e da área de trabalho.',
-    //   gridId: 'grid-layout'
-    // },
+    {
+       id: 'layout', label: 'Layout', icon: 'layout-dashboard', type: 'layouts',
+       title: 'Layout do Desktop', desc: 'Escolha a disposição dos painéis e da área de trabalho.',
+       gridId: 'grid-layout'
+    },
     {
       id: 'tutoriais', label: 'Tutoriais', icon: 'play-circle', type: 'videos',
       title: 'Tutoriais em vídeo', desc: 'Assista aos vídeos para aprender a usar o Mainuan.',
@@ -707,13 +1707,21 @@ const DEFAULT_CONFIG = {
     }
   ],
 
-  /* ── Botões do Início ── */
+  /* -- Botões do Início -- */
   homeButtons: [
     {
       section: 'Aparência',
       rows: [
         {
-          id: 'theme', label: 'Tema do sistema', sub: 'Escolha entre claro e escuro',
+          id: 'lookandfeel', label: 'Estilo visual', sub: 'Escolha entre desfocado, vítreo e sólido<br><br>',
+          icon: 'square-stack', type: 'lookandfeel'
+        },
+        /*{
+          id: 'taskbar', label: 'Em quantas partes dividir a barra de tarefas?', sub: 'Divida a barra inferior em 1, 3 ou 5 partes<br><br>',
+          icon: 'panel-bottom', type: 'taskbar'
+        },*/
+        {
+          id: 'theme', label: 'Tema do sistema', sub: 'Escolha entre claro e escuro<br><br>',
           icon: 'sun', type: 'theme'
         },
         {
@@ -726,8 +1734,12 @@ const DEFAULT_CONFIG = {
       section: 'Segurança & Privacidade',
       rows: [
         {
-          label: 'Antivírus', sub: 'Configurar o ClamAV',
-          icon: 'shield-check', btnLabel: 'Configurar', btnIcon: 'external-link', btnStyle: 'outline', action: 'antivirus'
+          label: 'Antivírus', sub: 'Configurar a proteção antivírus do sistema',
+          icon: 'syringe',
+          buttons: [
+            {btnLabel: 'Checar proteção', btnIcon: 'shield-check', btnStyle: 'outline', action: 'setup-antivirus'},
+            {btnLabel: 'Configurar', btnIcon: 'external-link', btnStyle: 'outline', action: 'antivirus'}
+          ]
         },
         {
           label: 'Firewall', sub: 'Configurar regras de firewall (UFW)',
@@ -750,7 +1762,7 @@ const DEFAULT_CONFIG = {
     }
   ],
 
-  /* ── Dados dos apps ── */
+  /* -- Dados dos apps -- */
   officeApps: [
     { id:'libreoffice', name:'LibreOffice',     desc:'Suite completa: Writer, Calc, Impress',  pkg:'org.libreoffice.LibreOffice',         iconImg:'org.libreoffice.LibreOffice.png' },
     { id:'wps',         name:'WPS Office',       desc:'Interface familiar ao MS Office',        pkg:'com.wps.Office',                     iconImg:'com.wps.Office.png' },
@@ -766,12 +1778,9 @@ const DEFAULT_CONFIG = {
     { id:'tor',       name:'Tor Browser',    desc:'Navegação anônima pela rede Tor',           pkg:'org.torproject.torbrowser-launcher',  iconImg:'org.torproject.torbrowser-launcher.png' }
   ],
   layouts: [
-    { id:'plasma-default', name:'Plasma Padrão',  desc:'Layout clássico KDE com barra inferior' },
-    { id:'panel-top',      name:'Painel Superior', desc:'Barra de tarefas no topo, estilo GNOME' },
-    { id:'latte-unity',    name:'Unity-like',      desc:'Dock lateral com indicadores de app'    },
-    { id:'floating',       name:'Flutuante',       desc:'Dock flutuante centralizado na base'     },
-    { id:'minimal',        name:'Minimalista',     desc:'Sem barra visível — apenas atalhos'      },
-    { id:'tiling',         name:'Tiling',          desc:'Janelas automáticas em grade (i3-like)'  }
+    { id:'5-barras', name:'Inovador',          desc:'Layout com 5 barras' },
+    { id:'3-barras', name:'Moderno',           desc:'Layout com 3 barras' },
+    { id:'1-barrra', name:'Modo tradicional',  desc:'Layout clássico com  uma única barra' },
   ],
   videos: [
     { id:'v1', title:'Conhecendo o sistema',     dur:'0:00', file:'/var/lib/curso-linux/videos/aula_1.mp4', iconImg:'icone-videoaulas_g204.svg' },
@@ -786,7 +1795,7 @@ const CFG = window.MAINUAN_CONFIG
   ? Object.assign({}, DEFAULT_CONFIG, window.MAINUAN_CONFIG)
   : DEFAULT_CONFIG;
 
-/* ── ELECTRON BRIDGE ──────────────────────────────────────── */
+/* -- ELECTRON BRIDGE ---------------------------------------- */
 
 // Dispara uma ação sem retorno (fire-and-forget)
 function launchCli(action) {
@@ -827,7 +1836,7 @@ function fetchSystemState() {
   }
 }
 
-/* ── PALETTE & ACCENT ─────────────────────────────────────── */
+/* -- PALETTE & ACCENT --------------------------------------- */
 let currentPalette = CFG.palette;
 let currentAccent  = CFG.accent;
 let currentPixKey  = CFG.pixKey;
@@ -880,16 +1889,57 @@ function setTheme(t) {
   launchCli(`theme ${t}`);
   lucide.createIcons();
 }
+function updateLookAndFeel(t) {
+  const btnB = document.getElementById('btn-blur');
+  const btnG = document.getElementById('btn-glass');
+  const btnL = document.getElementById('btn-solid');
+  btnL.className = 'btn btn-accent'; // hack pra evitar flickering, resolver depois
+
+  for (const btn of [btnB,btnG,btnL]) {
+    if (btn.id === `btn-${t}`) {
+      btn.className = 'btn btn-accent';
+      continue;
+    }
+    btn.className =  'btn btn-outline';
+  }
+}
+
+function setLookAndFeel(t) {
+  updateLookAndFeel(t);
+  launchCli(`look-and-feel ${t}`);
+  lucide.createIcons();
+}
+
+function updateTaskbarSplit(t) {
+  const btn1 = document.getElementById('btn-taskbar-1');
+  const btn3 = document.getElementById('btn-taskbar-3');
+  const btn5 = document.getElementById('btn-taskbar-5');
+  btn5.className = 'btn btn-accent'; // hack pra evitar flickering, resolver depois
+
+  for (const btn of [btn1,btn3,btn5]) {
+    if (btn.id === `btn-taskbar-${t}`) {
+      btn.className = 'btn btn-accent';
+      continue;
+    }
+    btn.className =  'btn btn-outline';
+  }
+}
+
+function setTaskbarSplit(t) {
+  updateTaskbarSplit(t);
+  launchCli(`taskbar-split ${t}`);
+  lucide.createIcons();
+}
 
 function updatePixDisplay() {
   const el = document.getElementById('pix-key-display');
   if (el) el.textContent = currentPixKey || '(chave não configurada)';
 }
 
-/* ── ACCENT COLOR (compat) ─────────────────────────────────── */
+/* -- ACCENT COLOR (compat) ----------------------------------- */
 function setAccent(color) { applyAccent(color); renderSwatches(currentPalette, color); }
 
-/* ── NAVIGATION ───────────────────────────────────────────── */
+/* -- NAVIGATION --------------------------------------------- */
 document.querySelectorAll('.nav-item').forEach(item => {
   item.addEventListener('click', () => {
     document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
@@ -900,9 +1950,9 @@ document.querySelectorAll('.nav-item').forEach(item => {
   });
 });
 
-/* ══════════════════════════════════════════════════════════
+/* ==========================================================
    APP CARDS — paginação + poll inteligente
-══════════════════════════════════════════════════════════ */
+========================================================== */
 
 const PAGE_SIZE = 20;
 
@@ -1020,7 +2070,7 @@ function goToGridPage(gridId, page) {
 function updateAppBtn(app) {
   const wrap = document.getElementById(`btn-wrap-${app.id}`);
   if (!wrap) return;
-  const inst = window.electronAPI.isInstalled(app.pkg);
+  const inst = window.electronAPI?.isInstalled(app.pkg);
   const was  = wrap.dataset.installed;
   const now  = inst ? '1' : '0';
   if (was === now) return; // sem mudança, evita re-render desnecessário
@@ -1060,14 +2110,14 @@ setInterval(() => {
   visibleApps(gridId).forEach(app => updateAppBtn(app));
 }, 1000);
 
-/* ── LAYOUT CARDS ─────────────────────────────────────────── */
+/* -- LAYOUT CARDS ------------------------------------------- */
 function buildLayoutCard(l, gridId) {
   const div = document.createElement('div');
   div.className = 'layout-card';
   div.id = `layout-${l.id}`;
   div.innerHTML = `
     <div class="layout-preview">${getLayoutSvg(l.id)}</div>
-    <div style="font-size:13px;font-weight:600;margin-bottom:3px">${l.icon} ${l.name}</div>
+    <div style="font-size:13px;font-weight:600;margin-bottom:3px">${l.name}</div>
     <div style="font-size:11px;color:var(--text-muted)">${l.desc}</div>
   `;
   div.addEventListener('click', () => {
@@ -1124,10 +2174,10 @@ function getLayoutSvg(id) {
       <line x1="70" y1="36" x2="136" y2="36" stroke="currentColor" opacity=".2" stroke-width="1"/>
     </svg>`,
   };
-  return `<div style="color:var(--text-muted)">${svgs[id] || ''}</div>`;
+  return `<div style="color:var(--text-muted)">${svgs[id] || svgs['plasma-default']}</div>`;
 }
 
-/* ── VIDEO CARDS ──────────────────────────────────────────── */
+/* -- VIDEO CARDS -------------------------------------------- */
 function buildVideoCard(v, gridId) {
   const div = document.createElement('div');
   div.className = 'video-card';
@@ -1141,14 +2191,14 @@ function buildVideoCard(v, gridId) {
     </div>
     <div class="video-info">
       <div class="video-title">${v.title}</div>
-      <div class="video-dur">${v.file.split('/').pop()}</div>
+      <!--<div class="video-dur">${v.file.split('/').pop()}</div>-->
     </div>
   `;
   div.addEventListener('click', () => openVideo(v));
   document.getElementById(gridId).appendChild(div);
 }
 
-/* ── VIDEO MODAL ──────────────────────────────────────────── */
+/* -- VIDEO MODAL -------------------------------------------- */
 function openVideo(v) {
   document.getElementById('modal-title').textContent = v.title;
   const vid = document.getElementById('modal-video');
@@ -1175,7 +2225,7 @@ document.getElementById('video-modal').addEventListener('click', function(e) {
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-/* ── PIX ──────────────────────────────────────────────────── */
+/* -- PIX ---------------------------------------------------- */
 function copyPix() {
   const key = currentPixKey || '(chave não configurada)';
   navigator.clipboard?.writeText(key).then(() => {
@@ -1188,20 +2238,20 @@ function copyPix() {
   });
 }
 
-/* ── ACCORDION ────────────────────────────────────────────── */
+/* -- ACCORDION ---------------------------------------------- */
 function toggleAccordion(id) {
   document.getElementById(id).classList.toggle('open');
 }
 
-/* ══════════════════════════════════════════════════════════
+/* ==========================================================
    PAGE RENDERERS — um por type
-══════════════════════════════════════════════════════════ */
+========================================================== */
 
 function renderHome(page) {
   const wrap = document.createElement('div');
   wrap.innerHTML = `
     <div class="welcome-hero">
-      <div class="page-title">Bem-vindo ao <span class="accent-text">Mainuan</span></div>
+      <div class="page-title">Bem-vindo ao <span class="accent-text"></span> Mainuan</div>
       <div class="page-desc">${page.desc}</div>
     </div>
     <div style="padding:0 32px 28px" id="home-sections"></div>
@@ -1215,6 +2265,7 @@ function renderHome(page) {
     sections.appendChild(sec);
 
     group.rows.forEach(row => {
+      console.log(row)
       if (row.type === 'theme') {
         sections.insertAdjacentHTML('beforeend', `
           <div class="section-row">
@@ -1231,6 +2282,46 @@ function renderHome(page) {
               </button>
             </div>
           </div>`);
+        } else if (row.type === 'lookandfeel') {
+          
+        sections.insertAdjacentHTML('beforeend', `
+          <div class="section-row">
+            <div class="section-row-label">
+              <i data-lucide="${row.icon}" size="16" class="accent-text"></i>
+              <div><div>${row.label}</div><div class="section-row-sub">${row.sub}</div></div>
+            </div>
+            <div style="display:flex;gap:8px;">
+              <button class="btn btn btn-accent" id="btn-blur" onclick="setLookAndFeel('blur')">
+                <i data-lucide="droplet" size="13"></i> Desfocado
+              </button>
+              <button class="btn btn-outline" id="btn-glass" onclick="setLookAndFeel('glass')">
+                <i data-lucide="mirror-rectangular" size="13"></i> Vítreo
+              </button>
+              <button class="btn btn-outline" id="btn-solid" onclick="setLookAndFeel('solid')">
+                <i data-lucide="box" size="13"></i> Sólido
+              </button>
+            </div>
+          </div>`);
+      } else if (row.type === 'taskbar') {
+          
+        sections.insertAdjacentHTML('beforeend', `
+          <div class="section-row">
+            <div class="section-row-label">
+              <i data-lucide="${row.icon}" size="16" class="accent-text"></i>
+              <div><div>${row.label}</div><div class="section-row-sub">${row.sub}</div></div>
+            </div>
+            <div style="display:flex;gap:8px;">
+              <button class="btn btn btn-accent" id="btn-taskbar-1" onclick="setTaskbarSplit('1')">
+                1
+              </button>
+              <button class="btn btn-outline" id="btn-taskbar-3" onclick="setTaskbarSplit('3')">
+                3
+              </button>
+              <button class="btn btn-outline" id="btn-taskbar-5" onclick="setTaskbarSplit('5')">
+                5
+              </button>
+            </div>
+          </div>`);
       } else if (row.type === 'swatches') {
         sections.insertAdjacentHTML('beforeend', `
           <div class="section-row">
@@ -1241,6 +2332,10 @@ function renderHome(page) {
             <div id="swatch-container" style="display:flex;gap:8px;flex-wrap:wrap;"></div>
           </div>`);
       } else {
+        const btns = row.buttons || [{action: row.action,btnIcon: row.btnIcon, btnLabel: row.btnLabel}];
+
+
+
         const btnCls = row.btnStyle === 'accent' ? 'btn-accent' : 'btn-outline';
         sections.insertAdjacentHTML('beforeend', `
           <div class="section-row">
@@ -1248,9 +2343,13 @@ function renderHome(page) {
               <i data-lucide="${row.icon}" size="16" class="accent-text"></i>
               <div><div>${row.label}</div><div class="section-row-sub">${row.sub}</div></div>
             </div>
-            <button class="btn ${btnCls}" onclick="launchCli('${row.action}')">
-              <i data-lucide="${row.btnIcon}" size="13"></i> ${row.btnLabel}
-            </button>
+            <div style="display:flex;gap:8px;">
+              ${btns.map(row => `
+                <button class="btn ${btnCls}" onclick="launchCli('${row.action}')">
+                  <i data-lucide="${row.btnIcon}" size="13"></i> ${row.btnLabel}
+                </button>
+              `).join('')}
+            </div>
           </div>`);
       }
     });
@@ -1315,9 +2414,9 @@ const PAGE_RENDERERS = {
   videos:  renderVideos,
 };
 
-/* ══════════════════════════════════════════════════════════
+/* ==========================================================
    BOOTSTRAP — gera sidebar + páginas a partir de CFG.pages
-══════════════════════════════════════════════════════════ */
+========================================================== */
 function bootstrap() {
   const navGroup = document.getElementById('nav-group');
   const content  = document.getElementById('content');
@@ -1369,7 +2468,7 @@ function bootstrap() {
   });
 }
 
-/* ── INIT ─────────────────────────────────────────────────── */
+/* -- INIT --------------------------------------------------- */
 bootstrap();
 
 fetchSystemState(); // puxa tema e cor reais do sistema
